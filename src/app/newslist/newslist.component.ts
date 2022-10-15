@@ -13,10 +13,13 @@ export class NewslistComponent implements OnInit {
     this.fetchData()
   }
 
+  status:boolean=false
+
   fetchData =()=>{
     this.myapi.newslistData().subscribe(
       (data) =>{
         this.newsData=data
+        this.status=true
       }
     )
   }
